@@ -1,0 +1,136 @@
+<html>
+    <head>
+        <title>Placement Registration Form</title>
+        <style type="text/css">
+            body{
+                background-image: linear-gradient(140deg, #aaecff 0%, white 50%, #aaecff);
+            }
+            div.container{
+              margin: 0;
+              margin-top: 15px;
+             margin-left: 15px;
+             margin-right: 15px;
+                margin-bottom: 15px;
+              }
+
+   
+
+        form > input,textarea {
+   
+        float: right;
+  clear: both;
+          width: 250px;
+          line-height: 26px;
+            margin-bottom: 10px;
+            box-shadow: 1px 1px 2px #000000;
+          
+             }
+          fieldset > input {
+                 margin-bottom: 10px;
+                box-shadow: 1px 1px 2px #000000;
+             }
+        </style>
+        <script type="text/javascript">
+            function validateForm() {
+                  var nm = document.forms["regform"]["name"].value;
+                  var ad = document.forms["regform"]["address"].value;
+                  var em = document.forms["regform"]["email"].value;
+                  var cn = document.forms["regform"]["contactNo"].value;
+                  var db = document.forms["regform"]["dob"].value;
+                  var pr = document.forms["regform"]["percentage"].value;
+                  //var x = document.getElementByName("technology").checked;
+                  var it = document.getElementById("IT").checked;
+                  var ce = document.getElementById("CE").checked;
+                  var ee = document.getElementById("EE").checked;
+                  var et = document.getElementById("ET").checked;
+                  var ins = document.getElementById("IN").checked;
+                  var bj = document.getElementById("bj").checked;
+                  var tiaa = document.getElementById("TIAA").checked;
+                  var tcs = document.getElementById("TCS").checked;
+                  var lt = document.getElementById("L&TInfotech").checked;
+                  var ji = document.getElementById("Jio").checked;
+                  var se = document.getElementById("Sunshine_Education").checked;
+                  var jp = document.getElementById("JP_Morgan_Chase_&_Co.").checked;
+                  var mj = document.getElementById("Majesco").checked;
+                  var br = document.getElementById("B&R_Industrial_Automation_Gmbh").checked;
+          
+                 
+                  if (nm == "" || ad == "" || cn == "" || db == "" || pr == "" || it != true && ce != true && ee != true && et != true && ins != true || bj != true && tiaa != true && tcs != true && lt != true && ji != true && se != true && jp != true && mj != true && br != true ) {
+                   
+                    window.alert("All the fields must be filled out");
+                    return false;
+                  }
+
+                   else if(pr < 60){
+                    window.alert('Percentage are not Valid.');
+                    return false;
+                    }
+                    
+                else if (em == "")
+                {
+                window.alert("Please enter a valid e-mail address.");
+                em.focus();
+                return false;
+                }
+                else if (em.indexOf("@", 0) < 0)
+                {
+                window.alert("Please enter a valid e-mail address.");
+                em.focus();
+                return false;
+                }
+                else if (em.indexOf(".", 0) < 0)
+                {
+                window.alert("Please enter a valid e-mail address.");
+                em.focus();
+                return false;
+                }
+                
+                }
+
+        </script>
+    </head>
+    <body> 
+        <br><br>
+        <div style="margin: auto;box-shadow: 2px 2px 4px #000000; background-image: linear-gradient(to bottom, #ededed 0%, white 50%, #ededed); width:434px;border: 2px solid;">
+            <div class="container">
+        <form name="regform" onsubmit="return validateForm()" method="POST" autocomplete>
+            <br>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="First Name-Surname"><br><br><br>
+            <label for="address">Address:</label>
+            <textarea id="address" id="address" name="address" placeholder="Address..."></textarea><br><br><br><br><br>
+            <label for="email">Email ID:</label>
+            <input type="text" id="email" name="email" placeholder="example@example.com"><br><br><br>
+            <label for="contactNo">Contact No:</label>
+            <input type="tel" id="contactNo" name="contactNo" pattern="[0-9]{10}" placeholder="1234567890"><br><br><br>
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" placeholder="Date of Birth"><br><br><br>
+            <label for="percentage">Percentage:</label>
+            <input type="number" id="percentage" name="percentage" min="0" max="100" placeholder="Percentage"><br><br><br>
+            <fieldset>
+            <legend>Branch:</legend>
+            <input type="radio" id="IT" name="branch"><label for="IT">Information Technology</label><br>
+            <input type="radio" id="CE" name="branch"><label for="CE">Computer</label><br>
+            <input type="radio" id="ET" name="branch"><label for="ET">Electronics and Telecommunication</label><br>
+            <input type="radio" id="EE" name="branch"><label for="EE">Electronics</label><br>
+            <input type="radio" id="IN" name="branch"><label for="IN">Instrumentation</label>
+            </fieldset><br>
+            <fieldset>
+            <legend>Technology-preferred:</legend>
+            <input type="checkbox" id="bj" name="technology"><label for="bj">Byju's</label><br>
+            <input type="checkbox" id="TIAA" name="technology"><label for="TIAA">TIAA</label><br>
+            <input type="checkbox" id="TCS" name="technology"><label for="TCS ">TCS </label><br>
+            <input type="checkbox" id="L&TInfotech" name="technology"><label for="L&T Infotech">L&T Infotech</label><br>
+            <input type="checkbox" id="Jio" name="technology"><label for="Jio ">Jio </label><br>
+            <input type="checkbox" id="Sunshine_Education" name="technology"><label for="Sunshine Education ">Sunshine Education </label><br>
+            <input type="checkbox" id="JP_Morgan_Chase_&_Co." name="technology"><label for="JP Morgan Chase & Co. ">JP Morgan Chase & Co. </label><br>
+            <input type="checkbox" id="Majesco" name="technology"><label for="Majesco ">Majesco </label><br>
+            <input type="checkbox" id="B&R_Industrial_Automation_Gmbh" name="technology"><label for="B&R Industrial Automation Gmbh">B&R Industrial Automation Gmbh</label><br>
+                   </fieldset><br><center>
+                               <input type="submit" style="box-shadow: 2px 2px 4px #000000; font-size: 22px; color: white;background-image: linear-gradient(140deg, black 20%, gray 60%,black);" value="SUBMIT"></div>
+</center>
+
+        </form></div>
+        </div>
+    </body>
+</html>
